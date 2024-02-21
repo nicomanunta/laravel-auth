@@ -107,12 +107,12 @@
                         </ul>
                     </div>
                 </nav>
+                <main class="col-10">
+                    
+                    @yield('content')
+                </main>
             </div>
         </div>
-        <main class="">
-            
-            @yield('content')
-        </main>
     </div>
 </body>
 
