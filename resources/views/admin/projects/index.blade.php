@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 mt-4 ">
                 <table class="table table-striped ">
                     <thead>
                       <tr>
@@ -23,7 +23,7 @@
                         <th scope="col">Slug</th>
                         <th scope="col">Immagine</th>
                         <th scope="col">Data</th>
-                        <th scope="col">TOOlS</th>
+                        <th scope="col">TOOLS</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -36,7 +36,7 @@
                             <td>{{$project->slug}}</td>
                             <td>{{$project->cover_immagine}}</td>
                             <td>{{$project->data}}</td>
-                            <td>TOOLS</td>
+                            <td><a href="{{ route('admin.projects.show', ['project'=>$project->id])}}"><button class="btn btn-sm btn-square btn-primary">Vedi</button></a></td>
                         
                         </tr>
                         @endforeach
