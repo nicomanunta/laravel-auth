@@ -87,6 +87,28 @@
             </nav>
         </header>
 
+
+        <div class="container-fluid vh-100">
+            <div class="row h-100">
+                <nav id="sidebarMenu" class="col-2 sidebar bg-dark navbar-dark ">
+                    <div class="position-sticky pt-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                {{Route::currentRouteName()}}
+                                <a href="{{ route('admin.dashboard')}}" class="nav-link text-white {{Route::currentRouteName()== 'admin.dashboard' ?'bg-secondary' : ''}}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.projects.index')}}" class="nav-link text-white {{Route::currentRouteName()== 'admin.projects.index' ?'bg-secondary' : ''}}">
+                                    <i class="fa-solid fa-newspaper fa-lg fa-fw"></i>Projects
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
         <main class="">
             
             @yield('content')
