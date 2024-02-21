@@ -23,6 +23,7 @@
                         <th scope="col">Slug</th>
                         <th scope="col">Immagine</th>
                         <th scope="col">Data</th>
+                        <th scope="col">TOOlS</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -35,7 +36,7 @@
                             <td>{{$project->slug}}</td>
                             <td>{{$project->cover_immagine}}</td>
                             <td>{{$project->data}}</td>
-                            {{-- <td>{{$project->}}</td> --}}
+                            <td>TOOLS</td>
                         
                         </tr>
                         @endforeach
