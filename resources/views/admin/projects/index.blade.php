@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{$project->id}}</td>
                             <td>{{$project->nome_progetto}}</td>
-                            <td>{{Str::limit($project->descrizione, 40, '...')}}</td>
+                            <td>{{Str::limit($project->descrizione, 30, '...')}}</td>
                             <td>{{$project->slug}}</td>
                             <td>{{$project->cover_immagine}}</td>
                             <td>{{$project->data}}</td>
