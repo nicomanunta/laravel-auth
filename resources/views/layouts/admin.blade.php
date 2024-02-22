@@ -14,6 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -96,12 +97,12 @@
                             <li class="nav-item">
                                 {{Route::currentRouteName()}}
                                 <a href="{{ route('admin.dashboard')}}" class="nav-link text-white {{Route::currentRouteName()== 'admin.dashboard' ?'bg-secondary' : ''}}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Dashboard
+                                    <i class="pe-3 fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('admin.projects.index')}}" class="nav-link text-white {{Route::currentRouteName()== 'admin.projects.index' ?'bg-secondary' : ''}}">
-                                    <i class="fa-solid fa-newspaper fa-lg fa-fw"></i>Projects
+                                    <i class="pe-3 fa-solid fa-newspaper fa-lg fa-fw"></i>Projects
                                 </a>
                             </li>
                         </ul>
