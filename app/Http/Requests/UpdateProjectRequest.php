@@ -24,7 +24,23 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nome_progetto' => 'required|max:50',
+            'descrizione' => 'required|string',
+            'data' => 'required|date',
+            'cover_immagine' => 'required|url'
+        ];
+    }
+    public function messages(){
+
+        return[
+            'nome_progetto.required' => 'Nome del progetto obbligatorio',
+            'nome_progetto.max' => 'Il nome non deve superare i 50 caratteri',
+            'descrizione.required' =>'Descrizione obbligatoria',
+            'descrizione.string' => 'La descrizione deve essere inserita come testo',
+            'data.required'=> 'Data obbligatoria',
+            'data.date'=> 'Deve essere una data valida',
+            'cover_immagine.required'=> 'Url immagine obbligatorio',
+            'cover_immagine.url'=>'Deve essere un url valido',
         ];
     }
 }

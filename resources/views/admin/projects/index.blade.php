@@ -34,9 +34,13 @@
                             <td>{{$project->nome_progetto}}</td>
                             <td>{{Str::limit($project->descrizione, 30, '...')}}</td>
                             <td>{{$project->slug}}</td>
-                            <td>{{$project->cover_immagine}}</td>
+                            <td>{{Str::limit($project->cover_immagine, 60, '...')}}</td>
                             <td>{{$project->data}}</td>
-                            <td><a href="{{ route('admin.projects.show', ['project'=>$project->id])}}"><button class="btn btn-sm btn-square btn-primary">Vedi</button></a></td>
+                            <td style="min-width: 100px;">
+                                <a href="{{ route('admin.projects.show', ['project'=>$project->id])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fa-regular fa-eye" style="color: #ffffff;"></i></button></a>
+                                <a href="{{ route('admin.projects.edit', ['project'=>$project->id])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button></a>
+                                
+                            </td>
                         
                         </tr>
                         @endforeach
