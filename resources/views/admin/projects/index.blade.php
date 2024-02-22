@@ -9,7 +9,7 @@
                         <h2>Tutti i progetti</h2>
                     </div>
                     <div>
-                        <a href=""><button class="btn btn-sm btn-primary">Aggiungi progetto</button></a>
+                        <a href="{{ route('admin.projects.create')}}"><button class="btn btn-sm btn-primary">Aggiungi progetto</button></a>
                     </div>
                 </div>
             </div>
