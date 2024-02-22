@@ -36,10 +36,14 @@
                             <td>{{$project->slug}}</td>
                             <td>{{Str::limit($project->cover_immagine, 60, '...')}}</td>
                             <td>{{$project->data}}</td>
-                            <td style="min-width: 100px;">
-                                <a href="{{ route('admin.projects.show', ['project'=>$project->id])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fa-regular fa-eye" style="color: #ffffff;"></i></button></a>
-                                <a href="{{ route('admin.projects.edit', ['project'=>$project->id])}}"><button class="btn btn-sm btn-square btn-warning"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button></a>
-                                
+                            <td>
+                                <div class="d-flex">
+                                    <a href="{{ route('admin.projects.show', ['project'=>$project->id])}}"><button class="btn btn-sm btn-square btn-primary"><i class="fa-regular fa-eye" style="color: #ffffff;"></i></button></a>
+                                    <a href="{{ route('admin.projects.edit', ['project'=>$project->id])}}" class="mx-2"><button class="btn btn-sm btn-square btn-warning"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button></a> 
+                                    <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" data-bs-target="#modal_project_delete-{{$project->id}}"><i class="fa-solid fa-trash" style="color:#ffffff;"></i></button>
+                                    @include('admin.projects.partials.modal_delete')
+                                </div>
+
                             </td>
                         
                         </tr>
