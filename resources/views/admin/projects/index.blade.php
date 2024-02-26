@@ -34,7 +34,7 @@
                             <td>{{$project->nome_progetto}}</td>
                             <td>{{Str::limit($project->descrizione, 30, '...')}}</td>
                             <td>{{$project->slug}}</td>
-                            <td>{{Str::limit($project->cover_immagine, 60, '...')}}</td>
+                            <td>{{Str::limit($project->cover_immagine, 30, '...')}}</td>
                             <td>{{$project->data}}</td>
                             <td>
                                 <div class="d-flex">

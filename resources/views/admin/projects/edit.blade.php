@@ -6,7 +6,7 @@
                 <h2 class="text-center my-4">Aggiungi un nuovo progetto</h2>
             </div>
             <div class="col-12">
-                <form action="{{route('admin.projects.update', $project->id )}}" method="POST">
+                <form action="{{route('admin.projects.update', $project->id )}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                     <div class="form-group mb-3">
@@ -30,10 +30,12 @@
                             <div class="text-danger">{{$message}}</div> 
                         @enderror
                     </div>
-                    <div class="form-group mb-3">
-                        @if ($project->cover_immagine != null)
-                            <img src="{{asset('/storage/' . $project->cover_immagine)}}" alt="{{$project->nome_progetto}}">
-                        @endif
+                    <div class="form-group mb-3" >
+                        <div class="mb-3">
+                            @if ($project->cover_immagine != null)
+                                <img class="dettaglio-immagine" src="{{asset('/storage/' . $project->cover_immagine)}}" alt="{{$project->nome_progetto}}">
+                            @endif
+                        </div>
                         <label for="cover_immagine">Immagine di copertina</label>
                         <input type="file" class="form-control" name="cover_immagine" id="cover_immagine" placeholder="" value="{{$project->cover_immagine}}">
                         @error('cover_immagine')

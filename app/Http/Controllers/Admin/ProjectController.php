@@ -54,7 +54,7 @@ class ProjectController extends Controller
             $form_data['cover_immagine'] = $path;
         }
 
-        $slug =Str::slug($project->nome_progetto, '-');
+        $slug =Str::slug($form_data['nome_progetto'], '-');
         $form_data['slug'] = $slug;
         $project->fill($form_data);
 
@@ -95,14 +95,24 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $form_data= $request->all();
-        
+       
+
         if ($request->hasFile('cover_immagine')) {
+            
             if ($project->cover_immagine != null) {
+                
                 Storage::disk('public')->delete($project->cover_immagine);
+
             }
             $path = Storage::disk('public')->put('projects_image', $form_data['cover_immagine']);
             $form_data['cover_immagine'] = $path;
         }
+
+        // if ($request->hasFile('cover_immagine')) {
+            
+        //     $path = Storage::disk('public')->put('projects_image', $form_data['cover_immagine']);
+        //     $form_data['cover_immagine'] = $path;
+        // }
         
 
         $slug =Str::slug($form_data['nome_progetto'], '-');
