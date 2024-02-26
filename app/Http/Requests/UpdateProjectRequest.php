@@ -39,7 +39,7 @@ class UpdateProjectRequest extends FormRequest
             'descrizione.string' => 'La descrizione deve essere inserita come testo',
             'data.required'=> 'Data obbligatoria',
             'data.date'=> 'Deve essere una data valida',
-            'cover_immagine.required'=> 'Url immagine obbligatorio',
+            'cover_immagine.required'=> 'Immagine obbligatorio',
             
         ];
     }

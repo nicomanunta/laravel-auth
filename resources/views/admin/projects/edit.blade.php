@@ -31,8 +31,11 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label for="cover_immagine">Url immagine</label>
-                        <input type="text" class="form-control" name="cover_immagine" id="cover_immagine" placeholder="Url immagine" value="{{$project->cover_immagine}}">
+                        @if ($project->cover_immagine != null)
+                            <img src="{{asset('/storage/' . $project->cover_immagine)}}" alt="{{$project->nome_progetto}}">
+                        @endif
+                        <label for="cover_immagine">Immagine di copertina</label>
+                        <input type="file" class="form-control" name="cover_immagine" id="cover_immagine" placeholder="" value="{{$project->cover_immagine}}">
                         @error('cover_immagine')
                             <div class="text-danger">{{$message}}</div>
                         @enderror
