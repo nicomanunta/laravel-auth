@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -46,6 +47,12 @@ class ProjectController extends Controller
         $form_data= $request->all();
         
         $project = new Project();
+
+        if ($request->hasFile('cover_immagine')) {
+            
+            $path = Storage::disk('public')->put('projects_image', $form_data['cover_immagine']);
+            $form_data['cover_immagine'] = $path;
+        }
 
         $slug =Str::slug($project->nome_progetto, '-');
         $form_data['slug'] = $slug;

@@ -27,7 +27,7 @@ class StoreProjectRequest extends FormRequest
             'nome_progetto' => 'required|max:50',
             'descrizione' => 'required|string',
             'data' => 'required|date',
-            'cover_immagine' => 'required|url'
+            'cover_immagine' => 'required'
         ];
     }
     
@@ -41,7 +41,7 @@ class StoreProjectRequest extends FormRequest
             'data.required'=> 'Data obbligatoria',
             'data.date'=> 'Deve essere una data valida',
             'cover_immagine.required'=> 'Url immagine obbligatorio',
-            'cover_immagine.url'=>'Deve essere un url valido',
+            
         ];
     }
 }
